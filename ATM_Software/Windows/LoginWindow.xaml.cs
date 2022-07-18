@@ -21,6 +21,7 @@ namespace ATM_Software.Windows
     /// </summary>
     public partial class LoginWindow : Window
     {
+        public static string CurrentAcc { get; set; }
         public LoginWindow()
         {
             InitializeComponent();
@@ -32,6 +33,8 @@ namespace ATM_Software.Windows
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
+            LoginSystem.Login(NumberBox.Text, PINBox.Text);
+            /*
             var numbers = new List<string> {
                 File.ReadAllText(Locations.Account1Number),
                 File.ReadAllText(Locations.Account2Number),
@@ -62,6 +65,7 @@ namespace ATM_Software.Windows
                     //Logger.LogError("UI", "Incorrect Number");
                 }
             }
+            */
         }
     }
 }
