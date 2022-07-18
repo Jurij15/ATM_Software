@@ -1,12 +1,23 @@
 ﻿using System;
+using ATM_Software.Windows;
 
 namespace ATM_Software // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
-            //this will be used as a logger, window will appear on start
+            //console will be used as a logger, window will appear on start
+            Console.WriteLine("Starting App...");
+            Logger.LogMessage("APPInternal", "Starting Logger...");
+            Logger.LogMessage("APPInternal", "Starting UI...");
+            //Logger.LogError("TEST", "Error here...");
+            initUI ui = new initUI();
+            //ui.init();
+            LoginWindow login = new LoginWindow();
+            login.ShowDialog();
+            //Console.Read();
         }
     }
 }
