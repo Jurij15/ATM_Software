@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using ATM_Software.Windows;
 using System.IO;
+using ATM_Software.Functions;
 
 namespace ATM_Software.Cores
 {
@@ -75,18 +76,27 @@ namespace ATM_Software.Cores
             if (number != File.ReadAllText(Locations.Account1Number) && number != File.ReadAllText(Locations.Account2Number) && number != File.ReadAllText(Locations.Account3Number) && number != File.ReadAllText(Locations.Account4Number))
             {
                 MessageBox.Show("Please check number and try again!");
-                Logger.LogError("UI", "Incorrect Number");
+                Logger.LogError("ULOGIN", "Incorrect Number");
             }
             else 
             {
-                LoginSucess();
+                if (pin != File.ReadAllText(Locations.Account1PIN) && pin != File.ReadAllText(Locations.Account2PIN) && pin != File.ReadAllText(Locations.Account3PIN) && pin != File.ReadAllText(Locations.Account4PIN))
+                {
+                    MessageBox.Show("Please check PIN and try again!");
+                    Logger.LogError("ULOGIN", "Incorrect PIN");
+                }
+                else
+                {
+                    LoginSucess();
+                    configs.CurrentAccount = AccountNumberFunctions.FindAccountByNumber(number);
+                }
             }
             return false;
         }
 
         static void LoginSucess()
         {
-            MessageBox.Show("Login gone WELL!!!!");
+            MessageBox.Show("tbd");
         }
     }
 }
