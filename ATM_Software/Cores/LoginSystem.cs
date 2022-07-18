@@ -14,65 +14,7 @@ namespace ATM_Software.Cores
     {
         public static bool Login(string number, string pin)
         {
-            /*
-            var numbers = new List<string> {
-                File.ReadAllText(Locations.Account1Number),
-                File.ReadAllText(Locations.Account2Number),
-                File.ReadAllText(Locations.Account3Number),
-                File.ReadAllText(Locations.Account4Number)
-            };
-            var pins = new List<string>{
-                File.ReadAllText(Locations.Account1PIN),
-                File.ReadAllText(Locations.Account2PIN),
-                File.ReadAllText(Locations.Account3PIN),
-                File.ReadAllText(Locations.Account4PIN)
-            };
-            numbers.ForEach(delegate (string name)
-            {
-                if (number != name)
-                {
-                    MessageBox.Show("Please check number and try again!");
-                    Logger.LogError("UI", "Incorrect Number");
-                }
-                else if (number == name)
-                {
-                    pins.ForEach(delegate (string ppins)
-                    {
-                        if (pin != ppins)
-                        {
-                            MessageBox.Show("Please check PIN and try again!");
-                            Logger.LogError("UI", "Incorrect PIN");
-                        }
-                        else if (pin == ppins)
-                        {
-                            LoginSucess();
-                        }
-                    });
-                }
-            });
-            */
-            /*
-            if (number != File.ReadAllText(Locations.Account1Number))
-            {
-                MessageBox.Show("Please check number and try again!");
-                Logger.LogError("UI", "Incorrect Number");
-            }
-            else if (number != File.ReadAllText(Locations.Account2Number))
-            {
-                MessageBox.Show("Please check number and try again!");
-                Logger.LogError("UI", "Incorrect Number");
-            }
-            else if (number != File.ReadAllText(Locations.Account3Number))
-            {
-                MessageBox.Show("Please check number and try again!");
-                Logger.LogError("UI", "Incorrect Number");
-            }
-            else if (number != File.ReadAllText(Locations.Account4Number))
-            {
-                MessageBox.Show("Please check number and try again!");
-                Logger.LogError("UI", "Incorrect Number");
-            }
-            */
+            //this needs to be redone, since any account can have any password atm, will fix it later
             if (number != File.ReadAllText(Locations.Account1Number) && number != File.ReadAllText(Locations.Account2Number) && number != File.ReadAllText(Locations.Account3Number) && number != File.ReadAllText(Locations.Account4Number))
             {
                 MessageBox.Show("Please check number and try again!");
@@ -88,7 +30,7 @@ namespace ATM_Software.Cores
                 else
                 {
                     LoginSucess();
-                    configs.CurrentAccount = AccountNumberFunctions.FindAccountByNumber(number);
+                    //configs.CurrentAccount = AccountNumberFunctions.FindAccountByNumber(number);
                 }
             }
             return false;
@@ -96,6 +38,12 @@ namespace ATM_Software.Cores
 
         static void LoginSucess()
         {
+            if (configs.CurrentAccount == null)
+            {
+                MessageBox.Show("CurrentAccount is null, please restart the app");
+                Logger.LogError("ULOGIN", "CurrentAccount is NULL!");
+                Environment.Exit(0);
+            }
             MessageBox.Show("tbd");
         }
     }
