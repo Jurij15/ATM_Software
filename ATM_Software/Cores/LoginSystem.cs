@@ -12,6 +12,35 @@ namespace ATM_Software.Cores
 {
     public static class LoginSystem
     {
+        public static string LoginV2(string number, string pin)
+        {
+            if (number == File.ReadAllText(Locations.Account1Number) && pin == File.ReadAllText(Locations.Account1PIN))
+            {
+                configs.CurrentAccount = AccountNumberFunctions.FindAccountByNumber(number);
+                LoginSucess();
+            }
+            else if (number == File.ReadAllText(Locations.Account2Number) && pin == File.ReadAllText(Locations.Account2PIN))
+            {
+                configs.CurrentAccount = AccountNumberFunctions.FindAccountByNumber(number);
+                LoginSucess();
+            }
+            else if (number == File.ReadAllText(Locations.Account3Number) && pin == File.ReadAllText(Locations.Account3PIN))
+            {
+                configs.CurrentAccount = AccountNumberFunctions.FindAccountByNumber(number);
+                LoginSucess();
+            }
+            else if (number == File.ReadAllText(Locations.Account4Number) && pin == File.ReadAllText(Locations.Account4PIN))
+            {
+                configs.CurrentAccount = AccountNumberFunctions.FindAccountByNumber(number);
+                LoginSucess();
+            }
+            else
+            {
+                MessageBox.Show("Please check creditentials and try again!");
+                Logger.LogError("ULOGIN", "Incorrect Credits!");
+            }
+            return null;
+        }
         public static bool Login(string number, string pin)
         {
             //this needs to be redone, since any account can have any password atm, will fix it later
