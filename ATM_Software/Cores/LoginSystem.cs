@@ -12,6 +12,8 @@ namespace ATM_Software.Cores
 {
     public static class LoginSystem
     {
+        //static LoginWindow login = new LoginWindow();
+        static MainWindow main = new MainWindow();
         public static string LoginV2(string number, string pin)
         {
             if (number == File.ReadAllText(Locations.Account1Number) && pin == File.ReadAllText(Locations.Account1PIN))
@@ -36,20 +38,25 @@ namespace ATM_Software.Cores
             }
             else
             {
-                MessageBox.Show("Please check creditentials and try again!");
                 Logger.LogError("ULOGIN", "Incorrect Credits!");
+                MessageBox.Show("Please check creditentials and try again!");
             }
             return null;
         }
 
-        static void LoginSucess()
+        public static void LoginSucess()
         {
             if (configs.CurrentAccount == null)
             {
-                MessageBox.Show("CurrentAccount is null, please restart the app");
                 Logger.LogError("ULOGIN", "CurrentAccount is NULL!");
+                MessageBox.Show("CurrentAccount is null, please restart the app");
                 Environment.Exit(0);
             }
+            Logger.LogSuccess("ULOGIN", "Login Successfull!");
+            //LoginWindow login = new LoginWindow();
+            //MainWindow main = new MainWindow();
+            //login.HideLogin();
+            main.Show();
             //MessageBox.Show(configs.CurrentAccount);
         }
     }

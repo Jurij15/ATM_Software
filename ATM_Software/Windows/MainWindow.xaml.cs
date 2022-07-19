@@ -22,6 +22,9 @@ namespace ATM_Software.Windows
         public MainWindow()
         {
             InitializeComponent();
+            Logger.LogSuccess("UI", "Main Loaded");
+            LoginWindow login = new LoginWindow();
+            login.HideLogin();
         }
     }
 }

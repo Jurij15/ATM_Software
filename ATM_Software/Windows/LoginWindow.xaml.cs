@@ -25,8 +25,7 @@ namespace ATM_Software.Windows
         public LoginWindow()
         {
             InitializeComponent();
-            Logger.LogMessage("UI", "Loading Login...");
-            Logger.LogMessage("UI", "UI Loaded");
+            Logger.LogMessage("UI", "Login Loaded");
 
             NewsBox.Text = File.ReadAllText(Locations.NewsFile);
         }
@@ -34,6 +33,15 @@ namespace ATM_Software.Windows
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
             LoginSystem.LoginV2(NumberBox.Text, PINBox.Text);
+        }
+
+        public void HideLogin()
+        {
+            this.Close();
+            Logger.LogMessage("UI", "Closed Login");
+            this.Close();
+            this.Close();
+            this.Hide();
         }
     }
 }

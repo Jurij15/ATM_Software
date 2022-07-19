@@ -12,6 +12,7 @@ namespace ATM_Software // Note: actual namespace depends on the project name.
             Console.WriteLine("Starting App...");
             Logger.LogMessage("APPInternal", "Starting Logger...");
             Logger.LogMessage("APPInternal", "Starting UI...");
+            Logger.LogMessage("UI", "Loading Login...");
             //Logger.LogError("TEST", "Error here...");
             LoginWindow login = new LoginWindow();
             login.ShowDialog();

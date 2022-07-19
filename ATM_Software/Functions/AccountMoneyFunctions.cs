@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using ATM_Software.Cores.Common;
+using ATM_Software.Cores;
 
 namespace ATM_Software.Functions
 {
