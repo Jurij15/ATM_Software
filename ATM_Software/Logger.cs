@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATM_Software.Cores.Common;
 
 namespace ATM_Software
 {
@@ -15,6 +16,12 @@ namespace ATM_Software
         public static void LogError(string from, string message)
         {
             Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("[" + from + "]" + message);
+            Console.ResetColor();
+        }
+        public static void LogSuccess(string from, string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("[" + from + "]" + message);
             Console.ResetColor();
         }

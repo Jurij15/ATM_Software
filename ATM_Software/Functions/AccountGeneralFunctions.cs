@@ -10,7 +10,7 @@ using ATM_Software.Cores;
 
 namespace ATM_Software.Functions
 {
-    public static class AccountNumberFunctions
+    public static class AccountGeneralFunctions
     {
         public static string FindAccountByNumber(string accountNumber) //this will find the account from 1/2/3/4 based on the accountnumber
         {
@@ -69,6 +69,62 @@ namespace ATM_Software.Functions
                 return null;
             }
             return null;
+        }
+        public static string GetAccountMoneyStat(string currentAcc)
+        {
+            string acc1 = File.ReadAllText(Locations.Account1MoneyStat);
+            string acc2 = File.ReadAllText(Locations.AccountMoneyStat);
+            string acc3 = File.ReadAllText(Locations.Account3MoneyStat);
+            string acc4 = File.ReadAllText(Locations.Account4MoneyStat);
+
+            if (currentAcc.Contains("1"))
+            {
+                return acc1;
+            }
+            else if (currentAcc.Contains("2"))
+            {
+                return acc2;
+            }
+            else if (currentAcc.Contains("3"))
+            {
+                return acc3;
+            }
+            else if (currentAcc.Contains("4"))
+            {
+                return acc4;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static string GetAccountMoneyStatFile(string currentAcc)
+        {
+            string acc1 = Locations.Account1MoneyStat;
+            string acc2 = Locations.AccountMoneyStat;
+            string acc3 = Locations.Account3MoneyStat;
+            string acc4 = Locations.Account4MoneyStat;
+
+            if (currentAcc.Contains("1"))
+            {
+                return acc1;
+            }
+            else if (currentAcc.Contains("2"))
+            {
+                return acc2;
+            }
+            else if (currentAcc.Contains("3"))
+            {
+                return acc3;
+            }
+            else if (currentAcc.Contains("4"))
+            {
+                return acc4;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
