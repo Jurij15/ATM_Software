@@ -14,9 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Windows\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
+    <ProjectReference Include="..\ATM_Software.Common\ATM_Software.Common.csproj" />
   </ItemGroup>
 
 </Project>

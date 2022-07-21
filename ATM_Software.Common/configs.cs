@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ATM_Software
+namespace ATM_Software.Common
 {
     public static class configs
     {

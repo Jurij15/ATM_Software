@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Net;
-using System.Diagnostics;
-using ATM_Software.Cores;
+using ATM_Software.Common;
+using ATM_Software.Common.Cores;
 
-namespace ATM_Software.Functions
+namespace ATM_Software.Common.Functions
 {
     public static class AccountGeneralFunctions
     {

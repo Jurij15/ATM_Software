@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using ATM_Software.Cores.Common;
-using ATM_Software.Cores;
+using ATM_Software.Common.Cores;
 
-namespace ATM_Software.Functions
+namespace ATM_Software.Common.Functions
 {
     public static class AccountMoneyFunctions
     {
@@ -26,7 +25,7 @@ namespace ATM_Software.Functions
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        if(string.Compare(line, deleteline) == 0)
+                        if (string.Compare(line, deleteline) == 0)
                             continue;
                         writer.WriteLine(line);
                     }
@@ -37,7 +36,7 @@ namespace ATM_Software.Functions
                 sw.Write(newstat.ToString());
                 sw.Close();
             }
-            Common.OperaionComplete("CoreFunctions", "DepositMoney");
+           Common.Cores.Common.OperationComplete("CoreFunctions", "DepositMoney");
         }
         public static void WithDrawalMoney(string cAccount, int amount)
         {
@@ -65,7 +64,7 @@ namespace ATM_Software.Functions
                 sw.Write(newstat.ToString());
                 sw.Close();
             }
-            Common.OperaionComplete("CoreFunctions", "WithDrawalMoney");
+            Common.Cores.Common.OperationComplete("CoreFunctions", "DepositMoney");
         }
         public static int GetMoneyStatNumber(string cAccount)
         {
