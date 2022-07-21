@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using ATM_Software.Common;
+using System.Windows.Forms;
 using ATM_Software.Common.Cores;
 
 namespace ATM_Software.Common.Functions
@@ -123,6 +124,51 @@ namespace ATM_Software.Common.Functions
             else
             {
                 return null;
+            }
+        }
+
+        public static string GetCurrentAccount()
+        {
+            return configs.CurrentAccount;
+        }
+
+        public static string GetCurrentAccountName(string CurrentAccount)
+        {
+            string acc1 = File.ReadAllText(Locations.Account1Owner);
+            string acc2 = File.ReadAllText(Locations.Account2Owner);
+            string acc3 = File.ReadAllText(Locations.Account3Owner);
+            string acc4 = File.ReadAllText(Locations.Account4Owner);
+
+            if (acc1 == CurrentAccount)
+            {
+                return acc1;
+            }
+            else if (acc2 == CurrentAccount)
+            {
+                return acc2;
+            }
+            else if (acc3 == CurrentAccount)
+            {
+                return acc3;
+            }
+            else if (acc4 == CurrentAccount)
+            {
+                return acc4;
+            }
+            else
+            {
+                return null;
+            }
+            return null;
+        }
+
+        public static void CheckCurrentAccountConfig()
+        {
+            if (configs.CurrentAccount == null)
+            {
+                Logger.LogError("ULOGIN", "CurrentAccount is NULL!");
+                MessageBox.Show("CurrentAccount is null, please restart the app");
+                Environment.Exit(0);
             }
         }
     }
