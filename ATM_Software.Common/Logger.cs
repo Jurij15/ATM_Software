@@ -18,6 +18,12 @@ namespace ATM_Software.Common
             Console.WriteLine("[-]" + "[" + from + "]" + message);
             Console.ResetColor();
         }
+        public static void LogWarning(string from, string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("[*]" + "[" + from + "]" + message);
+            Console.ResetColor();
+        }
         public static void LogSuccess(string from, string message)
         {
             Console.ForegroundColor = ConsoleColor.Green;

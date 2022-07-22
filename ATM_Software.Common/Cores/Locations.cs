@@ -27,6 +27,7 @@ namespace ATM_Software.Common.Cores
         public static string AccountPIN = "pin";
         public static string AccountOwner = "name";
         public static string AccountMoneyStat = "moneyStat";
+        public static string AccountValid = "isvalid";
 
         //files
         //account 1 stuff
@@ -34,24 +35,28 @@ namespace ATM_Software.Common.Cores
         public static string Account1PIN = Account1base + AccountPIN;
         public static string Account1Owner = Account1base + AccountOwner;
         public static string Account1MoneyStat = Account1base + AccountMoneyStat;
+        public static string Account1Valid = Account1base + AccountValid;
 
         //account 2 stuff
         public static string Account2Number = Account2base + AccountNumber;
         public static string Account2PIN = Account2base + AccountPIN;
         public static string Account2Owner = Account2base + AccountOwner;
         public static string Account2MoneyStat = Account2base + AccountMoneyStat;
+        public static string Account2Valid = Account2base + AccountValid;
 
         //account 3 stuff
         public static string Account3Number = Account3base + AccountNumber;
         public static string Account3PIN = Account3base + AccountPIN;
         public static string Account3Owner = Account3base + AccountOwner;
         public static string Account3MoneyStat = Account3base + AccountMoneyStat;
+        public static string Account3Valid = Account3base + AccountValid;
 
         //account 4 stuff
         public static string Account4Number = Account4base + AccountNumber;
         public static string Account4PIN = Account4base + AccountPIN;
         public static string Account4Owner = Account4base + AccountOwner;
         public static string Account4MoneyStat = Account4base + AccountMoneyStat;
+        public static string Account4Valid = Account4base + AccountValid;
 
         public static string NewsFile = baseNews + "news";
 

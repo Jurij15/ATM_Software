@@ -1,5 +1,5 @@
 ﻿#define showMainWindowAnywayTest
-//#undef showMainWindowAnywayTest
+#undef showMainWindowAnywayTest
 using System;
 using System.Collections.Generic;
 using System.Linq;

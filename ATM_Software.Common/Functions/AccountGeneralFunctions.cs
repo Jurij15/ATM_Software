@@ -73,7 +73,7 @@ namespace ATM_Software.Common.Functions
         public static string GetAccountMoneyStat(string currentAcc)
         {
             string acc1 = File.ReadAllText(Locations.Account1MoneyStat);
-            string acc2 = File.ReadAllText(Locations.AccountMoneyStat);
+            string acc2 = File.ReadAllText(Locations.Account2MoneyStat);
             string acc3 = File.ReadAllText(Locations.Account3MoneyStat);
             string acc4 = File.ReadAllText(Locations.Account4MoneyStat);
 
@@ -132,26 +132,26 @@ namespace ATM_Software.Common.Functions
             return configs.CurrentAccount;
         }
 
-        public static string GetCurrentAccountName(string CurrentAccount)
+        public static string GetCurrentAccountName(string currentAcc)
         {
             string acc1 = File.ReadAllText(Locations.Account1Owner);
             string acc2 = File.ReadAllText(Locations.Account2Owner);
             string acc3 = File.ReadAllText(Locations.Account3Owner);
             string acc4 = File.ReadAllText(Locations.Account4Owner);
 
-            if (acc1 == CurrentAccount)
+            if (currentAcc.Contains("1"))
             {
                 return acc1;
             }
-            else if (acc2 == CurrentAccount)
+            else if (currentAcc.Contains("2"))
             {
                 return acc2;
             }
-            else if (acc3 == CurrentAccount)
+            else if (currentAcc.Contains("3"))
             {
                 return acc3;
             }
-            else if (acc4 == CurrentAccount)
+            else if (currentAcc.Contains("4"))
             {
                 return acc4;
             }
@@ -160,6 +160,64 @@ namespace ATM_Software.Common.Functions
                 return null;
             }
             return null;
+        }
+
+        public static bool CheckAccountValid(string currentAcc)
+        {
+            string acc1 = File.ReadAllText(Locations.Account1Valid);
+            string acc2 = File.ReadAllText(Locations.Account2Valid);
+            string acc3 = File.ReadAllText(Locations.Account3Valid);
+            string acc4 = File.ReadAllText(Locations.Account4Valid);
+
+            if (currentAcc.Contains("1"))
+            {
+                if (acc1.Contains("true"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (currentAcc.Contains("2"))
+            {
+                if (acc2.Contains("true"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (currentAcc.Contains("3"))
+            {
+                if (acc3.Contains("true"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (currentAcc.Contains("4"))
+            {
+                if (acc4.Contains("true"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+            return false;
         }
 
         public static void CheckCurrentAccountConfig()

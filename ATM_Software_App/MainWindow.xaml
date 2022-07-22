@@ -7,8 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="480" Width="855"
         xmlns:ui="http://schemas.modernwpf.com/2019"
+        Closing="Window_Closing"
         ui:WindowHelper.UseModernWindowStyle="True">
     <Grid Margin="0,0,0,-6">
+        <Label Content="Account holder:" FontSize="20" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="30" Width="153"/>
+        <TextBlock HorizontalAlignment="Left" Margin="168,10,0,0" TextWrapping="Wrap" Text="AccOwnerBox" FontSize="20" x:Name="AccOwnerBox" VerticalAlignment="Top" Height="30" Width="164"/>
+        <Label Content="Funds:" FontSize="20" HorizontalAlignment="Left" Margin="428,10,0,0" VerticalAlignment="Top" Height="30" Width="62"/>
+        <TextBlock HorizontalAlignment="Left" x:Name="AccMoneyBox" FontSize="20" Margin="495,10,0,0" TextWrapping="Wrap" Text="AccMoneyBox" VerticalAlignment="Top" Height="30" Width="173"/>
+        <Label x:Name="InvalidMesage" Content="This account is not valid! You might not be allowed to preform certain actions!" HorizontalAlignment="Center" Margin="0,40,0,0" FontStyle="Normal" VerticalAlignment="Top" Width="486"/>
 
     </Grid>
     <!-- Window content here -->
