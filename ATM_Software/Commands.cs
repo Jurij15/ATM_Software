@@ -9,5 +9,7 @@ namespace ATM_Software
     public static class Commands
     {
         public static string ChangeValidCommand = "ChangeValid";
+
+        public static string CreateAccountCommand = "createAcc";
     }
 }

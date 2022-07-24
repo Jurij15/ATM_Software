@@ -31,17 +31,20 @@ namespace ATM_Software_App
             AmountBox.Visibility = Visibility.Visible;
             UniversalBtn.Visibility = Visibility.Visible;
             UniversalBtn.Content = "Deposit";
+            DynamicLabel.Content = "Enter the amount of money to be deposited to your account";
         }
         public void ShowWithdrawalContent()
         {
             AmountBox.Visibility = Visibility.Visible;
             UniversalBtn.Visibility = Visibility.Visible;
-            UniversalBtn.Content = "Deposit";
+            UniversalBtn.Content = "Withdrawal";
+            DynamicLabel.Content = "Enter the amount of money to be withdrawaled from your account";
         }
         public void HideDynamicContent()
         {
             AmountBox.Visibility = Visibility.Collapsed;
             UniversalBtn.Visibility = Visibility.Collapsed;
+            DynamicLabel.Visibility = Visibility.Collapsed;
         }
         public void GetRequiredAccountDetails()
         {

@@ -13,6 +13,8 @@ namespace ATM_Software.Common.Cores
         public static string baseNews = baseFolder + "News/";
         public static string accountsBase = @"Accounts/";
 
+        public static string AccountFolderBase = baseFolder + accountsBase + "Account";
+
         public static string account1directory = "Account1/";
         public static string account2directory = "Account2/";
         public static string account3directory = "Account3/";

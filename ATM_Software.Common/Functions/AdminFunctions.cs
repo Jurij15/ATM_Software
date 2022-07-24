@@ -7,6 +7,7 @@ using System.IO;
 using ATM_Software.Common;
 using System.Windows.Forms;
 using ATM_Software.Common.Cores;
+using System.IO;
 
 namespace ATM_Software.Common.Functions
 {
@@ -101,6 +102,41 @@ namespace ATM_Software.Common.Functions
         public static bool ChangeMoneyStat(string currentAcc, int amount)
         {
             return false; //for now
+        }
+
+        public static void CreateNewAccount()
+        {
+            string AccountFolderNumber;
+            string AccountName;
+            string AccountPIN;
+            string AccountNumber;
+            string IsValid;
+            Console.WriteLine("Create Account Command");
+            Console.WriteLine("Enter the new account folder Number:");
+            string newNumber = Console.ReadLine();
+            AccountFolderNumber = newNumber;
+            Console.WriteLine("Enter the new account name:");
+            AccountName = Console.ReadLine();
+            Console.WriteLine("Enter the new account pin");
+            AccountPIN = Console.ReadLine();
+            Console.WriteLine("Enter the new account number");
+            AccountNumber = Console.ReadLine();
+            Console.WriteLine("Is the new account valid (true/false)");
+            IsValid = Console.ReadLine();
+            if (!IsValid.Contains("true") && !IsValid.Contains("false"))
+            {
+                //we just assign it false, you can change it later anyway
+                IsValid = "false";
+            }
+            Console.WriteLine("Creating new account...");
+            string FullNewAccountDirectory = Locations.AccountFolderBase + AccountFolderNumber;
+            //actually create a account, will be used later
+            if (!Directory.Exists(FullNewAccountDirectory))
+            {
+                Directory.CreateDirectory(FullNewAccountDirectory);
+                //we just assume that if the directory doesnt exist the files dont too
+                //TODO: Finish this
+            }
         }
     }
 }
