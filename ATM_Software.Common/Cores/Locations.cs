@@ -28,6 +28,7 @@ namespace ATM_Software.Common.Cores
         public static string AccountOwner = "name";
         public static string AccountMoneyStat = "moneyStat";
         public static string AccountValid = "isvalid";
+        public static string AccountTransactions = "transactions";
 
         //files
         //account 1 stuff
@@ -36,6 +37,7 @@ namespace ATM_Software.Common.Cores
         public static string Account1Owner = Account1base + AccountOwner;
         public static string Account1MoneyStat = Account1base + AccountMoneyStat;
         public static string Account1Valid = Account1base + AccountValid;
+        public static string Account1Transactions = Account1base + AccountTransactions;
 
         //account 2 stuff
         public static string Account2Number = Account2base + AccountNumber;
@@ -43,6 +45,7 @@ namespace ATM_Software.Common.Cores
         public static string Account2Owner = Account2base + AccountOwner;
         public static string Account2MoneyStat = Account2base + AccountMoneyStat;
         public static string Account2Valid = Account2base + AccountValid;
+        public static string Account2Transactions = Account2base + AccountTransactions;
 
         //account 3 stuff
         public static string Account3Number = Account3base + AccountNumber;
@@ -50,6 +53,7 @@ namespace ATM_Software.Common.Cores
         public static string Account3Owner = Account3base + AccountOwner;
         public static string Account3MoneyStat = Account3base + AccountMoneyStat;
         public static string Account3Valid = Account3base + AccountValid;
+        public static string Account3Transactions = Account3base + AccountTransactions;
 
         //account 4 stuff
         public static string Account4Number = Account4base + AccountNumber;
@@ -57,6 +61,7 @@ namespace ATM_Software.Common.Cores
         public static string Account4Owner = Account4base + AccountOwner;
         public static string Account4MoneyStat = Account4base + AccountMoneyStat;
         public static string Account4Valid = Account4base + AccountValid;
+        public static string Account4Transactions  = Account4base + AccountTransactions;
 
         public static string NewsFile = baseNews + "news";
 

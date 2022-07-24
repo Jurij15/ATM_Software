@@ -61,7 +61,9 @@
     <Compile Include="Dialogs\NormalContentDialog.cs" />
     <Compile Include="Functions\AccountGeneralFunctions.cs" />
     <Compile Include="Functions\AccountMoneyFunctions.cs" />
+    <Compile Include="Functions\AccountTransactionsFunctions.cs" />
     <Compile Include="Functions\AdminFunctions.cs" />
+    <Compile Include="Functions\GeneralFunctions.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

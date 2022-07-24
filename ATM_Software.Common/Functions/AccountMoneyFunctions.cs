@@ -36,6 +36,7 @@ namespace ATM_Software.Common.Functions
                 sw.Write(newstat.ToString());
                 sw.Close();
             }
+           AccountTransactionsFunctions.AddAccountTransactions(cAccount, "Added " + amount.ToString() + " to account");
            Common.Cores.Common.OperationComplete("CoreFunctions", "DepositMoney");
         }
         public static void WithDrawalMoney(string cAccount, int amount)
@@ -64,6 +65,7 @@ namespace ATM_Software.Common.Functions
                 sw.Write(newstat.ToString());
                 sw.Close();
             }
+            AccountTransactionsFunctions.AddAccountTransactions(cAccount, "Withdrawaled " + amount.ToString() + " to account");
             Common.Cores.Common.OperationComplete("CoreFunctions", "DepositMoney");
         }
         public static int GetMoneyStatNumber(string cAccount)

@@ -25,7 +25,24 @@ namespace ATM_Software_App
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    { 
+        public void ShowDepositContent()
+        {
+            AmountBox.Visibility = Visibility.Visible;
+            UniversalBtn.Visibility = Visibility.Visible;
+            UniversalBtn.Content = "Deposit";
+        }
+        public void ShowWithdrawalContent()
+        {
+            AmountBox.Visibility = Visibility.Visible;
+            UniversalBtn.Visibility = Visibility.Visible;
+            UniversalBtn.Content = "Deposit";
+        }
+        public void HideDynamicContent()
+        {
+            AmountBox.Visibility = Visibility.Collapsed;
+            UniversalBtn.Visibility = Visibility.Collapsed;
+        }
         public void GetRequiredAccountDetails()
         {
             if (AccountGeneralFunctions.GetCurrentAccountName(AccountGeneralFunctions.GetCurrentAccount()) != null)
@@ -81,6 +98,7 @@ namespace ATM_Software_App
             AccountGeneralFunctions.CheckCurrentAccountConfig();
             //AllocConsole();
             GetRequiredAccountDetails();
+            HideDynamicContent();
             if (AccountGeneralFunctions.CheckAccountValid(configs.CurrentAccount))
             {
                 InvalidMesage.Visibility = Visibility.Hidden;
@@ -96,6 +114,46 @@ namespace ATM_Software_App
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void DepositBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShowDepositContent();
+        }
+
+        private void WithdrawalBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShowWithdrawalContent();
+        }
+
+        private void UniversalBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (UniversalBtn.Content == "Deposit")
+            {
+                if (AmountBox.Text == "")
+                {
+                    ErrorContentDialog.ShowDialog("Error", "Amount can't be empty!");
+                }
+                else if (AmountBox.Text != "")
+                {
+                    AccountMoneyFunctions.DepositMoney(configs.CurrentAccount, Int32.Parse(AmountBox.Text));
+                    RefreshStat();
+                    HideDynamicContent();
+                }
+            }
+            else if (UniversalBtn.Content == "Withdrawal")
+            {
+                if (AmountBox.Text == "")
+                {
+                    ErrorContentDialog.ShowDialog("Error", "Amount can't be empty!");
+                }
+                else if (AmountBox.Text != "")
+                {
+                    AccountMoneyFunctions.WithDrawalMoney(configs.CurrentAccount, Int32.Parse(AmountBox.Text));
+                    RefreshStat();
+                    HideDynamicContent();
+                }
+            }
         }
     }
 }

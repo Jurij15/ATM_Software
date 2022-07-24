@@ -15,6 +15,12 @@
         <Label Content="Funds:" FontSize="20" HorizontalAlignment="Left" Margin="428,10,0,0" VerticalAlignment="Top" Height="30" Width="62"/>
         <TextBlock HorizontalAlignment="Left" x:Name="AccMoneyBox" FontSize="20" Margin="495,10,0,0" TextWrapping="Wrap" Text="AccMoneyBox" VerticalAlignment="Top" Height="30" Width="173"/>
         <Label x:Name="InvalidMesage" Content="This account is not valid! You might not be allowed to preform certain actions!" HorizontalAlignment="Center" Margin="0,40,0,0" FontStyle="Normal" VerticalAlignment="Top" Width="486"/>
+        <Separator HorizontalAlignment="Center" Margin="0,64,0,0" VerticalAlignment="Top" Height="13" Width="835"/>
+        <Button FontSize="20" Content="Deposit" x:Name="DepositBtn" Click="DepositBtn_Click" Margin="239,82,0,0" VerticalAlignment="Top" Height="60" Width="224"/>
+        <Button FontSize="20" x:Name="WithdrawalBtn" Click="WithdrawalBtn_Click" Content="Withdrawal" Margin="10,82,0,0" VerticalAlignment="Top" Height="60" Width="224"/>
+        <Separator HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Height="15" Width="835"/>
+        <TextBox HorizontalAlignment="Left" Margin="26,255,0,0" TextWrapping="Wrap" x:Name="AmountBox" VerticalAlignment="Top" Width="176"/>
+        <Button Content="" x:Name="UniversalBtn" Click="UniversalBtn_Click" Margin="26,292,0,0" VerticalAlignment="Top"/>
 
     </Grid>
     <!-- Window content here -->
